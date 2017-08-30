@@ -1,5 +1,5 @@
 # Meteor data dir
-.meteor
+.meteor/local/
 
 # Logs
 logs
