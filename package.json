@@ -1,0 +1,14 @@
+{
+  "name": "plumo",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "bootstrap": "^3.3.7",
+    "meteor-node-stubs": "~0.2.4",
+    "mjml": "^3.3.3",
+    "popper.js": "^1.12.5"
+  }
+}
