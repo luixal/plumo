@@ -1,11 +1,7 @@
 <template name="editor">
-  <button class="btn btn-small btn-primary" id="preview">Click Me</button>
-  <div class="col-md-12">
-    <div class="col-md-6">
-      <textarea id="code"></textarea>
-    </div>
-    <div class="col-md-6">
-      {{preview}}
-    </div>
+  <button class="btn btn-sm btn-primary" id="preview">Preview (ctrl+M)</button>
+  <div id="editor" class="col-md-6" style="position: absolute; height: 60%;"></div>
+  <div class="col-md-6 col-md-offset-6" style="height: 60%;">
+    {{preview}}
   </div>
 </template>
