@@ -41,9 +41,13 @@ Template.editor.helpers({
     let code = Template.instance().mjml.get();
 
     if (code) {
-      let cmpl = mjml2html(code);
-      if (cmpl.errors.length) return 'Error rendering template</br>' + cmpl.errors;
-      return Spacebars.SafeString(cmpl.html);
+      try {
+        let cmpl = mjml2html(code);
+        return Spacebars.SafeString(cmpl.html);
+      } catch(error) {
+        console.log(error);
+        return Spacebars.SafeString('<h1 style="text-align: center;">Error rendering template<h1>');
+      }
     }
   }
 });
