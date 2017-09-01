@@ -1,5 +1,12 @@
 <template name="editor">
   <button class="btn btn-sm btn-primary" id="preview">Preview (ctrl+M)</button>
+  <textarea id="values" rows="5" cols="10">
+    {
+      value1: "A",
+      value2: "B",
+      value3: "C"
+    }
+  </textarea>
   <div id="editor" class="col-md-6" style="position: absolute; height: 60%;"></div>
   <div class="col-md-6 col-md-offset-6" style="height: 60%;">
     {{preview}}

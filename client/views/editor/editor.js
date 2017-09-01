@@ -1,9 +1,10 @@
-import { mjml2html } from 'mjml';
-
-
 Template.editor.onCreated(function() {
   this.mjml = new ReactiveVar();
 });
+
+getValues = function() {
+  return $("#values").val().trim();
+}
 
 Template.editor.onRendered(function() {
   // loading ACE modules:
@@ -42,8 +43,9 @@ Template.editor.helpers({
 
     if (code) {
       try {
-        let cmpl = mjml2html(code);
-        return Spacebars.SafeString(cmpl.html);
+        console.log(getValues());
+        let templater = new Templater(code, JSON.parse(getValues()));
+        return Spacebars.SafeString(templater.compile());
       } catch(error) {
         console.log(error);
         return Spacebars.SafeString('<h1 style="text-align: center;">Error rendering template<h1>');
